@@ -1,0 +1,28 @@
+name: bookstack-mysql
+
+services:
+  mysql_bookstack:
+    image: mysql:8.0
+    container_name: mysql_bookstack
+    restart: unless-stopped
+
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+
+    environment:
+      - MYSQL_ROOT_PASSWORD=rootpass123
+      - MYSQL_DATABASE=bookstackapp
+      - MYSQL_USER=bookstack
+      - MYSQL_PASSWORD=bookstackpass123
+
+    ports:
+      - "3307:3306"
+
+    volumes:
+      - mysql_bookstack_data:/var/lib/mysql
+
+volumes:
+  mysql_bookstack_data:
+    external: true
+    name: mysql_bookstack_data

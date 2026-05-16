@@ -1,0 +1,21 @@
+# Segredos e configurações locais
+.env
+.env.local
+*.env.local
+
+# Dados do BookStack (uploads, .env interno, cache, sessions)
+bookstack_data/
+
+# Diretórios de dados de banco (caso alguém use bind mount)
+mariadb_data/
+mysql_data/
+
+# Sistema operacional
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Editores
+.vscode/
+.idea/
+*.swp
