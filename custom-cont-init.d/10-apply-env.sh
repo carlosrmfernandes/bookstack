@@ -36,4 +36,20 @@ set_env DB_DATABASE  "${DB_DATABASE}"
 set_env DB_USERNAME  "${DB_USERNAME}"
 set_env DB_PASSWORD  "${DB_PASSWORD}"
 
+# LDAP / Active Directory
+set_env AUTH_METHOD                 "${AUTH_METHOD}"
+set_env LDAP_SERVER                 "${LDAP_SERVER}"
+set_env LDAP_BASE_DN                "${LDAP_BASE_DN}"
+set_env LDAP_DN                     "${LDAP_DN}"
+set_env LDAP_PASS                   "${LDAP_PASS}"
+set_env LDAP_USER_FILTER            "${LDAP_USER_FILTER}"
+set_env LDAP_VERSION                "${LDAP_VERSION}"
+set_env LDAP_ID_ATTRIBUTE           "${LDAP_ID_ATTRIBUTE}"
+set_env LDAP_EMAIL_ATTRIBUTE        "${LDAP_EMAIL_ATTRIBUTE}"
+set_env LDAP_DISPLAY_NAME_ATTRIBUTE "${LDAP_DISPLAY_NAME_ATTRIBUTE}"
+set_env LDAP_THUMBNAIL_ATTRIBUTE    "${LDAP_THUMBNAIL_ATTRIBUTE}"
+set_env LDAP_START_TLS              "${LDAP_START_TLS}"
+set_env LDAP_TLS_INSECURE           "${LDAP_TLS_INSECURE}"
+set_env LDAP_FOLLOW_REFERRALS       "${LDAP_FOLLOW_REFERRALS}"
+
 chown abc:abc "$ENV_FILE" 2>/dev/null || true

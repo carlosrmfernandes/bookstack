@@ -19,6 +19,22 @@ services:
       - DB_USERNAME=${DB_USERNAME}
       - DB_PASSWORD=${DB_PASSWORD}
 
+      # ---- Active Directory / LDAP ----
+      - AUTH_METHOD=${AUTH_METHOD:-standard}
+      - LDAP_SERVER=${LDAP_SERVER}
+      - LDAP_BASE_DN=${LDAP_BASE_DN}
+      - LDAP_DN=${LDAP_DN}
+      - LDAP_PASS=${LDAP_PASS}
+      - LDAP_USER_FILTER=${LDAP_USER_FILTER:-(&(objectClass=user)(|(sAMAccountName={user})(userPrincipalName={user})))}
+      - LDAP_VERSION=${LDAP_VERSION:-3}
+      - LDAP_ID_ATTRIBUTE=${LDAP_ID_ATTRIBUTE:-sAMAccountName}
+      - LDAP_EMAIL_ATTRIBUTE=${LDAP_EMAIL_ATTRIBUTE:-mail}
+      - LDAP_DISPLAY_NAME_ATTRIBUTE=${LDAP_DISPLAY_NAME_ATTRIBUTE:-displayName}
+      - LDAP_THUMBNAIL_ATTRIBUTE=${LDAP_THUMBNAIL_ATTRIBUTE:-thumbnailPhoto}
+      - LDAP_START_TLS=${LDAP_START_TLS:-false}
+      - LDAP_TLS_INSECURE=${LDAP_TLS_INSECURE:-false}
+      - LDAP_FOLLOW_REFERRALS=${LDAP_FOLLOW_REFERRALS:-false}
+
     volumes:
       - ./bookstack_data:/config
       - ./custom-cont-init.d:/custom-cont-init.d:ro
