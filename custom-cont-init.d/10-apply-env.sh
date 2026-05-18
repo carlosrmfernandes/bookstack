@@ -52,4 +52,15 @@ set_env LDAP_START_TLS              "${LDAP_START_TLS}"
 set_env LDAP_TLS_INSECURE           "${LDAP_TLS_INSECURE}"
 set_env LDAP_FOLLOW_REFERRALS       "${LDAP_FOLLOW_REFERRALS}"
 
+# SMTP / e-mail
+set_env MAIL_DRIVER       "${MAIL_DRIVER}"
+set_env MAIL_HOST         "${MAIL_HOST}"
+set_env MAIL_PORT         "${MAIL_PORT}"
+set_env MAIL_USERNAME     "${MAIL_USERNAME}"
+set_env MAIL_PASSWORD     "${MAIL_PASSWORD}"
+set_env MAIL_ENCRYPTION   "${MAIL_ENCRYPTION}"
+set_env MAIL_FROM         "${MAIL_FROM}"
+set_env MAIL_FROM_NAME    "${MAIL_FROM_NAME}"
+set_env MAIL_VERIFY_SSL   "${MAIL_VERIFY_SSL}"
+
 chown abc:abc "$ENV_FILE" 2>/dev/null || true

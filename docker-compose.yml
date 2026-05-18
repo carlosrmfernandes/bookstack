@@ -35,6 +35,17 @@ services:
       - LDAP_TLS_INSECURE=${LDAP_TLS_INSECURE:-false}
       - LDAP_FOLLOW_REFERRALS=${LDAP_FOLLOW_REFERRALS:-false}
 
+      # ---- Envio de e-mail (SMTP) ----
+      - MAIL_DRIVER=${MAIL_DRIVER:-smtp}
+      - MAIL_HOST=${MAIL_HOST}
+      - MAIL_PORT=${MAIL_PORT:-587}
+      - MAIL_USERNAME=${MAIL_USERNAME}
+      - MAIL_PASSWORD=${MAIL_PASSWORD}
+      - MAIL_ENCRYPTION=${MAIL_ENCRYPTION:-tls}
+      - MAIL_FROM=${MAIL_FROM}
+      - MAIL_FROM_NAME=${MAIL_FROM_NAME:-BookStack}
+      - MAIL_VERIFY_SSL=${MAIL_VERIFY_SSL:-true}
+
     volumes:
       - ./bookstack_data:/config
       - ./custom-cont-init.d:/custom-cont-init.d:ro
